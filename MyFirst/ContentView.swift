@@ -6,13 +6,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var outputText = "Hello, World!"
+    
     var body: some View {
         
         VStack {
-            Text("Hello, world!")
-                .font(.largeTitle)
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            
+            VStack {
+                Text(outputText)
+                    .font(.largeTitle)
+                Button("切り替えボタン") {
+                    outputText = "Hi, Swift!"
+                }
+                .padding(.all)
+                .background(Color.blue)
+                .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
             }
         }
     }
